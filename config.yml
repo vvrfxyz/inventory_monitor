@@ -1,0 +1,36 @@
+bark:
+  key: ""
+
+global_headers:
+  User-Agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"
+
+time_settings:
+  start: "09:00"
+  end: "21:00"
+
+websites:
+  - name: "建行1元购"
+    active: true
+    url: "https://vtravel.link2shops.com/vfuliApi/api/client/ypJyActivity/goodsDetail"
+    method: "POST"
+    headers:
+      Content-Type: "application/json;charset=UTF-8"
+    data:
+      goodsId: "b2e55c4df58245d2a133929198b19f09"
+      activityId: "c34758ef34bd4970bfbf7fcb9159f420"
+      channelId: "5d85806e97454f78a0ea81c370a105e6"
+    stock_expression: "$.goodsMap.stock"
+    title: "建行1元购"
+    message: "京东E卡已上架"
+  - name: "广发里程"
+    active: true
+    url: "https://mall.cgbchina.com.cn/api/item/all/sku/inventory/query/113000700557181"
+    method: "GET"
+    headers:
+      device-type: "APP"
+#    params: {}
+    stock_expression: "$.data.cgbSingleSkuInventoryInfoList[0].inventory"
+    title: "广发里程"
+    message: "东航里程已上架"
+
+sleep_interval: 10
