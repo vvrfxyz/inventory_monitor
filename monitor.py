@@ -34,7 +34,7 @@ class Monitor:
             return None
 
     def _extract_stock_from_response(self, response, stock_expression):
-        if self.format_type == 'json':
+        if self.response_format == 'json':
             jsonpath_expr = parse(stock_expression)
             match = jsonpath_expr.find(response)
             if match:
